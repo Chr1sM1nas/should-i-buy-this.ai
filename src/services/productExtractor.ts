@@ -265,9 +265,10 @@ export function detectProduct(): ProductPageDetection {
   }
 
   if (
-    hostname.includes('shopify.com') ||
-    hostname.includes('.myshopify.com') ||
-    hostname.includes('.shop')
+    hostname === 'shopify.com' ||
+    hostname.endsWith('.shopify.com') ||
+    hostname.endsWith('.myshopify.com') ||
+    hostname.endsWith('.shop')
   ) {
     const product = detectShopifyProduct();
     return {

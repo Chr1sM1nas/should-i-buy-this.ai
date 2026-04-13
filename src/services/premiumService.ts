@@ -1,6 +1,5 @@
 import { User, Subscription, SubscriptionTier, PriceAlert } from '../types';
-
-const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/shouldibuythis_premium'; // replace with real link
+import { STRIPE_PAYMENT_LINK } from '../config';
 
 export function createFreeUser(email: string): User {
   return {

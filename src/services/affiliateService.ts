@@ -1,11 +1,9 @@
 import { AffiliateClick, AffiliateConfig } from '../types';
-
-// Default Amazon Associates tag - replace with real tag
-const DEFAULT_AMAZON_TAG = 'shouldibuy0a-20';
+import { AMAZON_AFFILIATE_TAG } from '../config';
 
 export function getAffiliateConfig(): AffiliateConfig {
   return {
-    amazonTag: DEFAULT_AMAZON_TAG,
+    amazonTag: AMAZON_AFFILIATE_TAG,
     enabled: true,
   };
 }
@@ -20,7 +18,7 @@ export function injectAmazonAffiliateTag(url: string, tag?: string): string {
     if (!parsed.hostname.includes('amazon.')) {
       return url;
     }
-    const affiliateTag = tag || DEFAULT_AMAZON_TAG;
+    const affiliateTag = tag || AMAZON_AFFILIATE_TAG;
     parsed.searchParams.set('tag', affiliateTag);
     // Remove any existing associate tags that might conflict
     parsed.searchParams.delete('ref');
