@@ -1,0 +1,362 @@
+/* =========================================================
+   UI Preview page — wraps the extension popup for in-browser
+   visual testing without loading the full Chrome extension.
+   ========================================================= */
+
+:root {
+  --preview-bg: #f1f5f9;
+  --preview-surface: #ffffff;
+  --preview-border: #e2e8f0;
+  --preview-accent: #6366f1;
+  --preview-text: #1e293b;
+  --preview-muted: #64748b;
+  --preview-success: #16a34a;
+  --preview-radius: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--preview-bg);
+  color: var(--preview-text);
+  font-size: 14px;
+}
+
+/* ── Page shell ─────────────────────────────────────────── */
+
+.preview-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-header {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  padding: 20px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.preview-header h1 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.preview-header p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* ── Layout ──────────────────────────────────────────────── */
+
+.preview-layout {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Controls sidebar ────────────────────────────────────── */
+
+.preview-controls {
+  width: 220px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.preview-control-group {
+  background: var(--preview-surface);
+  border: 1px solid var(--preview-border);
+  border-radius: var(--preview-radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.preview-control-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--preview-muted);
+  margin-bottom: 4px;
+}
+
+.preview-control-btn {
+  background: #f8fafc;
+  border: 1px solid var(--preview-border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  color: var(--preview-text);
+  transition: background 0.15s, border-color 0.15s;
+  line-height: 1.3;
+}
+
+.preview-control-btn:hover {
+  background: #eff6ff;
+  border-color: var(--preview-accent);
+}
+
+.preview-control-btn--active {
+  background: #eef2ff;
+  border-color: var(--preview-accent);
+  color: var(--preview-accent);
+  font-weight: 600;
+}
+
+.preview-meta {
+  background: var(--preview-surface);
+  border: 1px solid var(--preview-border);
+  border-radius: var(--preview-radius);
+  padding: 14px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--preview-muted);
+}
+
+.preview-meta p {
+  margin: 0;
+}
+
+.preview-meta strong {
+  color: var(--preview-text);
+}
+
+/* ── Main content area ───────────────────────────────────── */
+
+.preview-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Individual sections ─────────────────────────────────── */
+
+.preview-section {
+  background: var(--preview-surface);
+  border: 1px solid var(--preview-border);
+  border-radius: var(--preview-radius);
+  padding: 20px 24px;
+}
+
+.preview-section-title {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--preview-text);
+}
+
+.preview-section-desc {
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: var(--preview-muted);
+  line-height: 1.6;
+}
+
+/* ── Popup frame (mimics the 320 px extension popout) ────── */
+
+.popup-frame {
+  display: inline-block;
+  border: 1px solid var(--preview-border);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+}
+
+/* ── Affiliate demo ──────────────────────────────────────── */
+
+.affiliate-demo-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.affiliate-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.affiliate-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--preview-muted);
+}
+
+.affiliate-url {
+  display: block;
+  background: #f8fafc;
+  border: 1px solid var(--preview-border);
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 12px;
+  word-break: break-all;
+  color: var(--preview-text);
+}
+
+.affiliate-url--original {
+  color: var(--preview-muted);
+}
+
+.affiliate-url--modified {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: var(--preview-success);
+}
+
+.affiliate-badge {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--preview-success);
+}
+
+/* ── Payment flow demo ───────────────────────────────────── */
+
+.payment-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.payment-step-pill {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  background: #f1f5f9;
+  color: var(--preview-muted);
+  border: 1px solid var(--preview-border);
+}
+
+.payment-step-pill--active {
+  background: var(--preview-accent);
+  color: #fff;
+  border-color: var(--preview-accent);
+  font-weight: 600;
+}
+
+.payment-step-pill--done {
+  background: #f0fdf4;
+  color: var(--preview-success);
+  border-color: #bbf7d0;
+}
+
+.payment-step-content {
+  background: #f8fafc;
+  border: 1px solid var(--preview-border);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.payment-step-content p {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--preview-muted);
+}
+
+.payment-step-content p:last-child {
+  margin-bottom: 0;
+}
+
+.payment-price-tag {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: var(--preview-accent) !important;
+  margin-bottom: 12px !important;
+}
+
+.payment-features-list {
+  margin: 0 0 14px;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.payment-features-list li {
+  font-size: 13px;
+  color: var(--preview-text);
+}
+
+.payment-success {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.payment-success-icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.payment-success h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: var(--preview-success);
+}
+
+.payment-success p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--preview-muted);
+  line-height: 1.6;
+}
+
+code {
+  background: #f1f5f9;
+  border: 1px solid var(--preview-border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 12px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  color: #6366f1;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 720px) {
+  .preview-layout {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .preview-controls {
+    width: 100%;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .preview-control-group {
+    flex: 1 1 200px;
+  }
+}
