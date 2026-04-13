@@ -5,7 +5,7 @@
  *  - AMAZON_AFFILIATE_TAG: your Amazon Associates tracking ID
  *  - STRIPE_PAYMENT_LINK: your Stripe payment link for the Premium plan
  */
-export const AMAZON_AFFILIATE_TAG = 'shouldibuy0a-20';
+export const AMAZON_AFFILIATE_TAG = 'agenticcollec-20';
 
 export const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/shouldibuythis_premium';
 
