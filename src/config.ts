@@ -7,6 +7,6 @@
  */
 export const AMAZON_AFFILIATE_TAG = 'agenticcollec-20';
 
-export const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/shouldibuythis_premium';
+export const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/aFa8wRfdW2VD5KG7cg3sI00';
 
 export const PREMIUM_PRICE_USD = 2.99;
