@@ -1,0 +1,12 @@
+/**
+ * Extension configuration.
+ *
+ * Replace these values with your own before publishing:
+ *  - AMAZON_AFFILIATE_TAG: your Amazon Associates tracking ID
+ *  - STRIPE_PAYMENT_LINK: your Stripe payment link for the Premium plan
+ */
+export const AMAZON_AFFILIATE_TAG = 'agenticcollec-20';
+
+export const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/aFa8wRfdW2VD5KG7cg3sI00';
+
+export const PREMIUM_PRICE_USD = 2.99;
