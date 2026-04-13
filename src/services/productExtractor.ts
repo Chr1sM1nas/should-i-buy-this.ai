@@ -265,7 +265,6 @@ export function detectProduct(): ProductPageDetection {
   }
 
   if (
-    hostname === 'shopify.com' ||
     hostname.endsWith('.shopify.com') ||
     hostname.endsWith('.myshopify.com') ||
     hostname.endsWith('.shop')
