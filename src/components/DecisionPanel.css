@@ -1,0 +1,183 @@
+.decision-panel {
+  position: relative;
+  width: 320px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.16);
+}
+
+.panel-drag-handle {
+  margin: -16px -16px 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  border-radius: 12px 12px 0 0;
+  background: #f8fafc;
+  color: #475569;
+  cursor: grab;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.panel-drag-handle:active {
+  cursor: grabbing;
+}
+
+.panel-close {
+  position: absolute;
+  top: 48px;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.panel-eyebrow {
+  margin: 0 0 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+
+.panel-title {
+  margin: 0 32px 12px 0;
+  font-size: 20px;
+}
+
+.panel-recommendation {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.panel-deal-quality {
+  margin: 0 0 12px;
+}
+
+.deal-quality-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.deal-quality-great_deal {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.deal-quality-fair_price {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.deal-quality-overpriced {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.deal-quality-insufficient_data {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.deal-quality-note {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.panel-market-intelligence {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border: 1px solid #dbe3ee;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.market-title {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #334155;
+}
+
+.market-line {
+  margin: 0 0 4px;
+  font-size: 12px;
+  color: #1f2937;
+}
+
+.market-summary {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #0f5a96;
+}
+
+.panel-guardrail {
+  margin: 0 0 12px;
+  padding: 8px 10px;
+  background: #fff8e1;
+  border: 1px solid #f2d58a;
+  border-radius: 8px;
+  color: #7a5200;
+  font-size: 12px;
+}
+
+.panel-timing-insight {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border: 1px solid #dbe3ee;
+  border-radius: 10px;
+}
+
+.timing-pill {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #e6f0fb;
+  color: #0f5a96;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.timing-urgency {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.timing-savings {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #1f2937;
+}
+
+.timing-note {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.panel-reasons ul {
+  margin: 0 0 16px;
+  padding-left: 18px;
+}
+
+.panel-reasons p {
+  margin: 0 0 16px;
+}

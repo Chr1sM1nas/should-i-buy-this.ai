@@ -2,20 +2,20 @@ import { defineConfig } from 'vite'
 import path from 'path'
 
 export default defineConfig({
-  base: './',
   build: {
     target: 'ES2020',
     outDir: 'dist',
-    emptyOutDir: true,
+    emptyOutDir: false,
     minify: false,
+    cssCodeSplit: false,
     rollupOptions: {
       input: {
-        popup: path.resolve(__dirname, 'src/popup/index.html')
+        content: path.resolve(__dirname, 'src/content/content.ts')
       },
       output: {
-        entryFileNames: 'popup/popup.js',
-        chunkFileNames: 'popup/[name].js',
-        assetFileNames: 'popup/[name].[ext]'
+        format: 'iife',
+        entryFileNames: 'content/content.js',
+        assetFileNames: 'content/content.css'
       }
     }
   },

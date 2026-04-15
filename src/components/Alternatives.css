@@ -1,0 +1,40 @@
+.alternatives {
+  margin-top: 16px;
+}
+
+.alternatives h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.alternatives-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alternative-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.alt-image {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.alt-details h4,
+.alt-details p {
+  margin: 0 0 4px;
+}
+
+.alt-link {
+  color: #1d4ed8;
+  text-decoration: none;
+  font-size: 13px;
+}

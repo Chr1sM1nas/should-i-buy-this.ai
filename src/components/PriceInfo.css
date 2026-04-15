@@ -1,0 +1,25 @@
+.price-info {
+  margin-top: 12px;
+}
+
+.price-info h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.score-label {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.score-bar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  border-radius: 999px;
+}
