@@ -22,7 +22,7 @@
     }
   ],
   "action": {
-    "default_popup": "popup/index.html",
+    "default_popup": "src/popup/index.html",
     "default_title": "Should I Buy This?"
   }
 }
