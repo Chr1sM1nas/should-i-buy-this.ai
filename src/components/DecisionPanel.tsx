@@ -163,7 +163,13 @@ export default function DecisionPanel({
 
       <PriceInfo priceScore={decision.priceScore} />
       <Alternatives alternatives={decision.alternatives} />
-      <ActionButtons onBuy={onBuy} onSkip={onSkip} onShare={onShare} />
+      <ActionButtons
+        onBuy={onBuy}
+        onSkip={onSkip}
+        onShare={onShare}
+        isLowConfidence={isLowConfidence}
+        recommendationLevel={decision.recommendationLevel}
+      />
     </section>
   );
 }

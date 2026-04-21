@@ -3,7 +3,7 @@ import { createRoot, Root } from 'react-dom/client';
 import DecisionPanel from '../components/DecisionPanel';
 import { sendToBackground } from '../utils/messaging';
 import { detectProduct, debugProductDetection } from '../services/productExtractor';
-import { buildAffiliateBuyUrl, hasAffiliateLink } from '../services/affiliateLinks';
+import { buildAffiliateBuyUrl, buildAffiliateCartUrl, hasAffiliateLink } from '../services/affiliateLinks';
 import { saveAffiliateClick, saveDecision, saveTelemetryEvent } from '../utils/storage';
 import type { DecisionResult, ProductData } from '../types';
 
@@ -157,9 +157,17 @@ function saveAndOpenProduct() {
   void saveDecision(currentDecision);
 
   if (currentProduct && hasAffiliateLink(currentProduct)) {
+    const affiliateCartUrl = buildAffiliateCartUrl(currentProduct);
+
+    if (affiliateCartUrl) {
+      logBuyClick(affiliateCartUrl);
+      window.location.assign(affiliateCartUrl);
+      return;
+    }
+
     const affiliateUrl = buildAffiliateBuyUrl(currentProduct);
     logBuyClick(affiliateUrl);
-    window.open(affiliateUrl, '_blank', 'noopener,noreferrer');
+    window.location.assign(affiliateUrl);
     return;
   }
 
@@ -182,14 +190,13 @@ function saveAndOpenProduct() {
 
   if (currentProduct) {
     logBuyClick(currentProduct.url);
-    window.open(currentProduct.url, '_blank', 'noopener,noreferrer');
+    window.location.assign(currentProduct.url);
   }
 }
 
 function saveAndDismiss() {
-  if (!currentDecision) return;
-  void saveDecision(currentDecision);
   closePanel();
+  window.close();
 }
 
 function renderDecisionPanel(product: ProductData, decision: DecisionResult) {

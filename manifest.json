@@ -4,19 +4,37 @@
   "version": "0.1.0",
   "description": "AI-powered shopping assistant to help you make smarter purchase decisions",
   "permissions": [
-    "storage",
-    "tabs",
-    "activeTab"
+    "storage"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "https://*.amazon.com/*",
+    "https://*.amazon.co.uk/*",
+    "https://*.amazon.de/*",
+    "https://*.amazon.fr/*",
+    "https://*.amazon.it/*",
+    "https://*.amazon.es/*",
+    "https://*.amazon.ca/*",
+    "https://*.amazon.com.au/*",
+    "https://*.amazon.co.jp/*",
+    "https://*.amazon.in/*"
   ],
   "background": {
     "service_worker": "dist/background/background.js"
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": [
+        "https://*.amazon.com/*",
+        "https://*.amazon.co.uk/*",
+        "https://*.amazon.de/*",
+        "https://*.amazon.fr/*",
+        "https://*.amazon.it/*",
+        "https://*.amazon.es/*",
+        "https://*.amazon.ca/*",
+        "https://*.amazon.com.au/*",
+        "https://*.amazon.co.jp/*",
+        "https://*.amazon.in/*"
+      ],
       "js": ["dist/content/content.js"],
       "css": ["dist/content/content.css"]
     }

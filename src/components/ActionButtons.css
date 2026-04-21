@@ -1,5 +1,6 @@
 .action-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin-top: 16px;
 }
@@ -27,4 +28,11 @@
 .btn-tertiary {
   background: #eff6ff;
   color: #1d4ed8;
+}
+
+.affiliate-disclosure {
+  width: 100%;
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: #6b7280;
 }

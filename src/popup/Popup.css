@@ -30,6 +30,17 @@
   margin-bottom: 16px;
 }
 
+.popup-disclosure {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border: 1px solid #ddd2bf;
+  border-radius: 10px;
+  background: #fffdfa;
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
 .popup-section h2 {
   margin: 0 0 10px;
   font-size: 14px;
@@ -273,3 +284,4 @@
   color: #4b5563;
   line-height: 1.3;
 }
+

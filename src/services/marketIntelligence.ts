@@ -23,7 +23,7 @@ export function buildMarketComparison(product: ProductData): MarketComparison {
   const seed = hashTitle(product.title);
   const currentRetailer = product.source === 'amazon' ? 'Amazon' : 'Current Store';
 
-  const onlineRetailers = ['eBay', 'Walmart Online', 'Best Buy Online', 'AliExpress'];
+  const onlineRetailers = ['Online Marketplace', 'Big Box Online', 'Electronics Outlet', 'Value Marketplace'];
   const offlineRetailers = ['Costco Local', 'Retail Park', 'High Street Electronics'];
 
   const points: MarketPricePoint[] = [

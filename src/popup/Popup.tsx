@@ -95,6 +95,10 @@ export default function Popup() {
         </div>
       </header>
 
+      <p className="popup-disclosure">
+        This extension may use affiliate links, which means we may earn a commission from qualifying purchases at no extra cost to you.
+      </p>
+
       <section className="popup-section">
         <h2>Recent Buy Clicks</h2>
         {recentClicks.length > 0 ? (
